@@ -5,7 +5,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { BrowserRouter } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
 import { indigo, teal } from "@mui/material/colors";
-import { CssBaseline } from '@mui/material';
+import { CssBaseline } from "@mui/material";
 
 //^ Define your custom MUI themes here or below the App function
 const darkTheme = createTheme({
@@ -26,7 +26,9 @@ export default function App() {
   return (
     <ThemeProvider theme={selectedTheme}>
       <BrowserRouter>
-        <CssBaseline> {/* MUST INCLUDE for dark theme to work */}
+        <CssBaseline>
+          {" "}
+          {/* MUST INCLUDE for dark theme to work */}
           <Routes>
             <Route path="/" element={<Home />} />
           </Routes>
