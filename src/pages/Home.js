@@ -1,24 +1,26 @@
 import React from "react";
-import { Box, typography } from "@mui/system";
 import { Typography, Button, Stack } from "@mui/material";
+import { useGlobalContext } from "../state-management/globalContext";
 
 export default function Home() {
+  const { setTheme } = useGlobalContext();
   return (
     <Stack sx={{ width: "100vw" }} alignItems="center">
-      <Button variant="contained" sx={{ mb: "24px" }}>
-        margin-bottom: 24px
+      <h1>Theme changer</h1>
+      <Button
+        variant="contained"
+        sx={{ m: "24px" }}
+        onClick={() => setTheme("dark")}
+      >
+        Set dark theme
       </Button>
       <Button
         variant="contained"
-        sx={{ backgroundColor: "yellow", color: "black", mb: 2 }}
+        color="secondary"
+        sx={{ mb: 2 }}
+        onClick={() => setTheme("light")}
       >
-        margin-bottom: 16px
-      </Button>
-      <Button
-        variant="contained"
-        sx={{ backgroundColor: "orange", color: "black" }}
-      >
-        I'm just chillin
+        Set light theme
       </Button>
     </Stack>
   );
